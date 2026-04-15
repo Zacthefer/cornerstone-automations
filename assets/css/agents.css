@@ -1,0 +1,34 @@
+/* ============================================================
+   AGENTS.CSS — Styles specific to agents.html only
+   ============================================================ */
+
+/* --- AGENTS HERO --- */
+/*
+  Shorter than home hero (~60vh)
+  Same dark aesthetic, different headline
+*/
+/* TODO */
+
+/* --- AGENTS GRID --- */
+/*
+  Larger, more detailed cards than home preview
+  Each card:
+    - Gold top border accent
+    - Icon (top)
+    - Title (h3, display font)
+    - Description (2–3 sentences)
+    - Results stat (gold, larger font)
+    - CTA button full-width at bottom
+  2-column grid on desktop, 1 on mobile
+  3rd card centered if alone in last row
+*/
+/* TODO */
+
+/* --- BOTTOM CTA STRIP --- */
+/*
+  Dark bg with gold border top and bottom
+  Centered content
+  Headline + subtext + button
+  Generous padding
+*/
+/* TODO */

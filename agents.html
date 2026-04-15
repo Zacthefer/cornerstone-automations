@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agents — Cornerstone Automations</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg':         '#0a0a0a',
+            'bg-2':       '#111111',
+            'bg-card':    '#161616',
+            'gold-light': '#f0d080',
+            'gold-mid':   '#c9a84c',
+            'gold-dark':  '#8a6820',
+            'text-main':  '#e8e8e8',
+            'text-muted': '#888888',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            body:    ['"DM Sans"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .text-gold {
+      background: linear-gradient(135deg, #f0d080 0%, #c9a84c 40%, #8a6820 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #navbar.scrolled {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+  </style>
+</head>
+
+<body class="bg-bg font-body text-text-main antialiased">
+
+  <!-- ============================================================
+    NAV (identical to index.html — "Our Agents" marked active)
+  ============================================================ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-gold-mid/20 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between relative">
+
+      <a href="index.html" class="flex-shrink-0">
+        <img src="assets/images/logo.svg" alt="Cornerstone Automations" width="180" height="64" class="h-10 w-auto">
+      </a>
+
+      <div class="hidden md:flex items-center gap-10">
+        <a href="index.html" class="font-body text-sm text-text-muted hover:text-gold-mid transition-colors duration-200 tracking-wide">Home</a>
+        <a href="agents.html" class="font-body text-sm text-gold-mid tracking-wide">Our Agents</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button
+          onclick="openCORA(null)"
+          class="hidden md:inline-flex font-body text-sm text-gold-mid border border-gold-mid px-5 py-2 hover:bg-gold-mid hover:text-bg transition-all duration-200 tracking-wide">
+          Talk to CORA
+        </button>
+        <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="Toggle menu">
+          <span class="block w-6 h-px bg-text-main"></span>
+          <span class="block w-6 h-px bg-text-main"></span>
+          <span class="block w-6 h-px bg-text-main"></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="nav-links-mobile" class="md:hidden hidden absolute top-full left-0 right-0 bg-bg/98 backdrop-blur-md border-b border-gold-mid/20 flex-col px-6 py-6 gap-5">
+      <a href="index.html" class="font-body text-sm text-text-muted hover:text-gold-mid transition-colors duration-200 tracking-wide">Home</a>
+      <a href="agents.html" class="font-body text-sm text-gold-mid tracking-wide">Our Agents</a>
+      <button onclick="openCORA(null)" class="font-body text-sm text-gold-mid border border-gold-mid px-5 py-2.5 text-left hover:bg-gold-mid hover:text-bg transition-all duration-200 tracking-wide">
+        Talk to CORA
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+    AGENTS HERO
+  ============================================================ -->
+  <section class="relative flex items-center justify-center overflow-hidden bg-bg" style="min-height: 60vh;">
+    <div class="absolute inset-0 z-0"
+         style="background: radial-gradient(ellipse 80% 70% at 50% 40%, #1a1a1a 0%, #0a0a0a 60%, #050505 100%);">
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-28 pb-20">
+      <p class="reveal font-body text-xs text-gold-mid tracking-widest uppercase mb-5">Our Systems</p>
+      <h1 class="reveal delay-100 font-display font-light text-5xl md:text-7xl text-text-main leading-tight mb-6">
+        Built to Work.<br><span class="text-gold">Designed to Scale.</span>
+      </h1>
+      <p class="reveal delay-200 font-body text-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
+        Every automation Cornerstone builds is diagnosed first, custom-built second, and supported until it performs.
+      </p>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent z-0"></div>
+  </section>
+
+  <!-- ============================================================
+    AGENTS GRID
+  ============================================================ -->
+  <section class="bg-bg py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <!-- 2-column grid; 3rd card centered -->
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Card 1: Lead Generation -->
+        <div class="reveal bg-bg-card border-t-2 border-gold-dark hover:border-gold-mid transition-colors duration-300 p-10 rounded-sm flex flex-col">
+          <!-- Icon -->
+          <svg class="w-12 h-12 mb-8" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 10h32l-12 16v12l-8-4V26L8 10z" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="36" cy="36" r="7" stroke="#f0d080" stroke-width="1.5"/>
+            <path d="M33 36h6M36 33v6" stroke="#f0d080" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+
+          <h2 class="font-display text-3xl text-text-main font-semibold mb-4">Lead Generation Workflows</h2>
+          <p class="font-body text-text-muted text-sm leading-relaxed mb-6 flex-1">
+            We build automated pipelines that capture, qualify, and nurture leads while you sleep. From quiz funnels to multi-step email sequences, your pipeline never stops working.
+          </p>
+
+          <!-- Stat -->
+          <p class="font-display text-gold-mid text-2xl font-semibold mb-8">3x more qualified leads on average</p>
+
+          <button
+            onclick="openCORA('lead-gen')"
+            data-agent="lead-gen"
+            class="font-body text-sm text-gold-mid border border-gold-mid px-6 py-4 hover:bg-gold-mid hover:text-bg transition-all duration-200 tracking-wide w-full">
+            Talk to CORA
+          </button>
+        </div>
+
+        <!-- Card 2: AI Voice Bot -->
+        <div class="reveal delay-100 bg-bg-card border-t-2 border-gold-dark hover:border-gold-mid transition-colors duration-300 p-10 rounded-sm flex flex-col">
+          <svg class="w-12 h-12 mb-8" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="4" width="16" height="26" rx="8" stroke="#c9a84c" stroke-width="1.5"/>
+            <path d="M8 24c0 8.837 7.163 16 16 16s16-7.163 16-16" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="24" y1="40" x2="24" y2="46" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="16" y1="46" x2="32" y2="46" stroke="#f0d080" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M19 18h2M27 18h2M19 23h10" stroke="#f0d080" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+
+          <h2 class="font-display text-3xl text-text-main font-semibold mb-4">AI Voice Bot</h2>
+          <p class="font-body text-text-muted text-sm leading-relaxed mb-6 flex-1">
+            VAPI-powered voice agents that answer calls, qualify prospects, and book appointments automatically. Your business stays open 24/7 without hiring a receptionist.
+          </p>
+
+          <p class="font-display text-gold-mid text-2xl font-semibold mb-8">Zero missed calls. Zero dropped leads.</p>
+
+          <button
+            onclick="openCORA('voice-bot')"
+            data-agent="voice-bot"
+            class="font-body text-sm text-gold-mid border border-gold-mid px-6 py-4 hover:bg-gold-mid hover:text-bg transition-all duration-200 tracking-wide w-full">
+            Talk to CORA
+          </button>
+        </div>
+
+        <!-- Card 3: Back Office — centered on desktop -->
+        <div class="reveal delay-200 md:col-span-2 md:max-w-lg md:mx-auto w-full bg-bg-card border-t-2 border-gold-dark hover:border-gold-mid transition-colors duration-300 p-10 rounded-sm flex flex-col">
+          <svg class="w-12 h-12 mb-8" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="6" stroke="#c9a84c" stroke-width="1.5"/>
+            <path d="M24 4v5M24 39v5M4 24h5M39 24h5M8.69 8.69l3.54 3.54M35.77 35.77l3.54 3.54M8.69 39.31l3.54-3.54M35.77 12.23l3.54-3.54" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 36l6-10 5 5 6-12 5 7" stroke="#f0d080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <h2 class="font-display text-3xl text-text-main font-semibold mb-4">Back Office &amp; Accounting Automation</h2>
+          <p class="font-body text-text-muted text-sm leading-relaxed mb-6 flex-1">
+            We eliminate the manual data entry, invoicing delays, and reporting headaches that eat your team's time. Automation handles the back office so your people handle growth.
+          </p>
+
+          <p class="font-display text-gold-mid text-2xl font-semibold mb-8">Hours saved every week, from day one.</p>
+
+          <button
+            onclick="openCORA('back-office')"
+            data-agent="back-office"
+            class="font-body text-sm text-gold-mid border border-gold-mid px-6 py-4 hover:bg-gold-mid hover:text-bg transition-all duration-200 tracking-wide w-full">
+            Talk to CORA
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    BOTTOM CTA STRIP
+  ============================================================ -->
+  <section class="bg-bg-2 border-t border-b border-gold-mid/20 py-20 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="reveal font-display font-light text-4xl md:text-5xl text-text-main mb-4">
+        Not sure which system fits your business?
+      </h2>
+      <p class="reveal delay-100 font-body text-text-muted text-lg mb-10">
+        CORA will figure it out in under 3 minutes.
+      </p>
+      <button
+        onclick="openCORA(null)"
+        class="reveal delay-200 font-body text-sm text-gold-mid border border-gold-mid px-10 py-4 hover:bg-gold-mid hover:text-bg transition-all duration-200 tracking-wide">
+        Talk to CORA
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    FOOTER (identical to index.html)
+  ============================================================ -->
+  <footer class="bg-bg-2 border-t border-gold-mid/20">
+    <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-8">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="assets/images/logo.svg" alt="Cornerstone Automations" width="160" height="56" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity">
+      </a>
+      <nav class="flex items-center gap-8">
+        <a href="index.html" class="font-body text-sm text-text-muted hover:text-gold-mid transition-colors duration-200">Home</a>
+        <a href="agents.html" class="font-body text-sm text-text-muted hover:text-gold-mid transition-colors duration-200">Our Agents</a>
+      </nav>
+      <a href="mailto:isaacautomationgroup@isaacautomation.com"
+         class="font-body text-sm text-text-muted hover:text-gold-mid transition-colors duration-200">
+        isaacautomationgroup@isaacautomation.com
+      </a>
+    </div>
+    <div class="border-t border-gold-mid/10 max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="font-body text-xs text-text-muted tracking-wide italic">We Sell Growth. We Become Your Pillar.</p>
+      <p class="font-body text-xs text-text-muted">&copy; 2026 Cornerstone Automations. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CORA Chat Widget -->
+  <div id="cora-widget"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cora.js"></script>
+</body>
+</html>
