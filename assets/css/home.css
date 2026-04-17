@@ -1,0 +1,51 @@
+/* ============================================================
+   HOME.CSS — Styles specific to index.html only
+   ============================================================ */
+
+/* --- HERO --- */
+/*
+  Full-bleed section, min-height: 100vh
+  Background: dark gradient + subtle noise texture overlay
+  Content centered vertically and horizontally
+  Eyebrow label above headline
+  Two CTA buttons side by side (stack on mobile)
+*/
+/* TODO */
+
+/* --- VALUE PROOF --- */
+/*
+  Alternate bg (--color-bg-2)
+  3 items in a row on desktop, stack on mobile
+  Each item: gold checkmark icon + text
+  Subtle gold left-border accent on each item
+*/
+/* TODO */
+
+/* --- HOW IT WORKS --- */
+/*
+  Dark bg
+  3 steps in a horizontal row
+  Numbered circles (gold outline)
+  Connector line between circles
+  Step label + description below each circle
+*/
+/* TODO */
+
+/* --- AGENTS PREVIEW --- */
+/*
+  3-column card grid (1 column on mobile)
+  Cards: dark bg, gold border on hover, subtle lift on hover
+  See all agents link below grid, right-aligned
+*/
+/* TODO */
+
+/* --- TESTIMONIALS CAROUSEL --- */
+/*
+  Center: Cornerstone C logo (static, gold)
+  Orbit ring: faint gold circle
+  Nodes: client logo/photo circles positioned on circumference
+  Entire orbit container rotates via CSS animation
+  Each node counter-rotates to stay upright
+  On hover: pause animation, show expanded quote card
+*/
+/* TODO */

@@ -1,0 +1,119 @@
+/* ============================================================
+   MAIN.CSS — Global styles, design tokens, shared components
+   Imported by every page
+   ============================================================ */
+
+/* --- GOOGLE FONTS --- */
+/* TODO: Add import for Cormorant Garamond + DM Sans */
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap'); */
+
+/* --- DESIGN TOKENS --- */
+:root {
+  /* Background layers */
+  --color-bg:         #0a0a0a;   /* Page background */
+  --color-bg-2:       #111111;   /* Alternate section background */
+  --color-bg-card:    #161616;   /* Card backgrounds */
+
+  /* Gold palette */
+  --color-gold-light: #f0d080;
+  --color-gold-mid:   #c9a84c;
+  --color-gold-dark:  #8a6820;
+
+  /* Text */
+  --color-text:       #e8e8e8;   /* Primary text */
+  --color-text-muted: #888888;   /* Secondary / caption text */
+
+  /* Borders */
+  --color-border:     rgba(201, 168, 76, 0.2);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, #f0d080 0%, #c9a84c 40%, #8a6820 100%);
+  --gradient-bg:   linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 100%);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition:      0.3s ease;
+  --transition-slow: 0.6s ease;
+}
+
+/* --- CSS RESET --- */
+/* TODO: box-sizing, margin/padding reset, img display block */
+
+/* --- BASE ELEMENTS --- */
+/* TODO: body, html, a, ul, button base styles */
+
+/* --- TYPOGRAPHY SCALE --- */
+/*
+  .eyebrow  — all-caps, letter-spaced, gold, small size
+  h1        — display font, large, light weight
+  h2        — display font, section headlines
+  h3        — display font, card headlines
+  p         — body font, readable line-height
+  .text-muted — muted color for secondary info
+*/
+/* TODO */
+
+/* --- GOLD TEXT UTILITY --- */
+/* .text-gold — applies gold gradient to text */
+/* TODO */
+
+/* --- BUTTONS --- */
+/*
+  .btn-primary   — gold border, gold text, dark bg, hover: gold fill
+  .btn-secondary — transparent, white text, subtle border
+*/
+/* TODO */
+
+/* --- NAVBAR --- */
+/*
+  Fixed top, full-width
+  Dark bg with subtle bottom border
+  Logo left | Links center | CTA right
+  Shrinks slightly on scroll (JS handles class toggle)
+  Mobile: hamburger menu
+*/
+/* TODO */
+
+/* --- FOOTER --- */
+/*
+  Dark bg
+  Logo + links + email
+  Bottom bar with slogan + copyright
+*/
+/* TODO */
+
+/* --- SECTION WRAPPER --- */
+/* .section — padding top/bottom, max-width container centered */
+/* TODO */
+
+/* --- SCROLL REVEAL --- */
+/*
+  .reveal         — initial state: opacity 0, translateY 30px
+  .reveal.visible — animated state: opacity 1, translateY 0
+  JS adds .visible when element enters viewport
+*/
+/* TODO */
+
+/* --- CORA WIDGET --- */
+/*
+  #cora-trigger — floating button, bottom-right, always visible
+  #cora-panel   — slide-up chat panel, hidden by default
+  #cora-panel.open — panel visible
+*/
+/* TODO */
