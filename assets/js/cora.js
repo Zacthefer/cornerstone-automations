@@ -3,7 +3,7 @@
    ============================================================ */
 
 // --- CONFIG ---
-const CORA_API = 'https://cornerstone-api.onrender.com/chat';
+const CORA_API = 'https://cornerstone-api-rthb.onrender.com/chat';
 // Local dev: const CORA_API = 'http://localhost:8000/chat';
 
 const GOOGLE_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbwQkmx4uiCcHftIJFlP_Bt67Uszxyj5DhLnNOArDoJZmXTlNLJRLzcRi4u4dREcjj2W/exec';
@@ -637,7 +637,6 @@ function showCompletionCTA() {
   // Disable input after assessment complete
   const input = document.getElementById('cora-input');
   const sendBtn = document.getElementById('cora-send');
-  const inputArea = document.getElementById('cora-input-area');
   if (input) input.placeholder = 'Assessment complete — book a call above!';
   if (input) input.disabled = true;
   if (sendBtn) sendBtn.disabled = true;
